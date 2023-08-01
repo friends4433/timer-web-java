@@ -12,16 +12,106 @@
     <div class="container">
         <div class="toppart">
             <h1 id="head-1">Welcome to Docker Test page</h1>
-            <h2 id="head-2">This timer will end on Wednesday 4th May 2022 at 03:30 PM</h2>
+            <h2 id="head-2">This is test for DOcker & Kubernets Practices Image</h2>
            
         </div>
-        <div class="bottompart">
+        <!-- <div class="bottompart">
           <p class="dis"> <span id="demo1"></span> DAYS </p> 
           <p  class="dis">  <span id="demo2"></span> HOURS </p> 
            <p  class="dis"> <span id="demo3"></span> MINS </p> 
            <p  class="dis">  <span id="demo4"></span> SECS </p> 
     
-        </div>
+        </div> -->
+       
+        <!DOCTYPE html>
+<html>
+<body>
+    <h2>Today Date and Time:</h2>
+    <p id="currentDateTime"></p>
+
+    <script>
+        // JavaScript code to get the current date and time
+        var currentDate = new Date();
+        var dateString = currentDate.toDateString();
+        var timeString = currentDate.toLocaleTimeString();
+
+        // Display the current date and time in the HTML element with the id "currentDateTime"
+        var dateTimeElement = document.getElementById("currentDateTime");
+        dateTimeElement.innerHTML = dateString + " " + timeString;
+    </script>
+      <script>
+        function updateClock() {
+            var currentDate = new Date();
+            var timeString = currentDate.toLocaleTimeString();
+
+            var clockElement = document.getElementById("currentTime");
+            clockElement.innerHTML = timeString;
+        }
+
+        // Update the clock initially to show the current time immediately
+        updateClock();
+
+        // Update the clock every second (1000 milliseconds)
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<body>
+    <p id="hostname"></p>
+    <p id="ipAddress"></p>
+
+    <script>
+        // JavaScript code to fetch the IP address and hostname
+        window.onload = function() {
+            // Get the IP address
+            var ipAddress = "";
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    ipAddress = data.ip;
+                    // Display the IP address in the HTML element with the id "ipAddress"
+                    document.getElementById("ipAddress").innerHTML = "PublicIP Address: " + ipAddress;
+                })
+                .catch(error => {
+                    console.log("Error fetching IP address:", error);
+                });
+        };
+    </script>
+</body>
+</html>
+<body>
+    <!-- <h1>Real-Time Clock:</h1> -->
+    <p id="currentTime"></p>
+
+    <script>
+        function updateClock() {
+            var currentDate = new Date();
+            var timeString = currentDate.toLocaleTimeString();
+
+            var clockElement = document.getElementById("currentTime");
+            clockElement.innerHTML = timeString;
+        }
+
+        // Update the clock initially to show the current time immediately
+        updateClock();
+
+        // Update the clock every second (1000 milliseconds)
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
         
     </div>
     <br><br><br><br><br><br>
